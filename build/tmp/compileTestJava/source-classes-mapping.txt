@@ -1,0 +1,6 @@
+my/app/MyAppTest.java
+ my.app.MyAppTest
+my/app/TestAppender.java
+ my.app.TestAppender
+my/app/MdcPopulatingFilterTest.java
+ my.app.MdcPopulatingFilterTest

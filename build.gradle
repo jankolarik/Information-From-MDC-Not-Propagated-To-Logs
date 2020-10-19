@@ -1,0 +1,41 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "6.0.0"
+    id "io.micronaut.application" version '1.0.3'
+}
+
+version "0.1"
+group "my.app"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+micronaut {
+    runtime "netty"
+    testRuntime "junit5"
+    processing {
+        incremental true
+        annotations "my.app.*"
+    }
+}
+
+dependencies {
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    runtimeOnly("ch.qos.logback:logback-classic")
+}
+
+mainClassName = "my.app.Application"
+java {
+    sourceCompatibility = JavaVersion.toVersion('1.8')
+    targetCompatibility = JavaVersion.toVersion('1.8')
+}
+
+
+
+

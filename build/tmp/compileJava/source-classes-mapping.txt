@@ -1,0 +1,8 @@
+my/app/Application.java
+ my.app.Application
+my/app/AuthenticationProviderUserPassword.java
+ my.app.AuthenticationProviderUserPassword
+my/app/HelloController.java
+ my.app.HelloController
+my/app/MdcPopulatingFilter.java
+ my.app.MdcPopulatingFilter
