@@ -1,0 +1,24 @@
+Configuration:
+  monitorInterval: 30
+  status: warn
+  name: myAppTestLogging
+  thresholdFilter:
+    level: trace
+  appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: "%d{yyyy-MM-dd zzz HH:mm:ss,SSS} [%t] [%X{principal}] %-5level %logger{36} - %formattedMsg%n"
+    # used by tests to check what is being logged.
+    List:
+      name: LIST
+      PatternLayout:
+        Pattern: "%d{yyyy-MM-dd zzz HH:mm:ss,SSS} [%t] [%X{principal}] %-5level %logger{36} - %formattedMsg%n"
+  Loggers:
+    logger:
+      - name: my.app
+        level: trace
+    Root:
+      level: info
+      AppenderRef:
+        ref: STDOUT

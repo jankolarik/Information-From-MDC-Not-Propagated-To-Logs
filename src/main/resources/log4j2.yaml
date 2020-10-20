@@ -1,0 +1,20 @@
+Configuration:
+  monitorInterval: 30
+  status: warn
+  name: myAppLogging
+  thresholdFilter:
+    level: debug
+  appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: "%d{yyyy-MM-dd zzz HH:mm:ss,SSS} [%t] [%X{principal}] %-5level %logger{36} - %formattedMsg%n"
+      BurstFilter:
+        level: INFO
+        rate: 16
+        maxBurst: 100
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        ref: STDOUT
