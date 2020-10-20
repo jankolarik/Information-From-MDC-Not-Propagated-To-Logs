@@ -40,8 +40,7 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-slf4j-impl'
     implementation 'org.apache.logging.log4j:log4j-core'
     testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', classifier: 'tests'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.3'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
+    testImplementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
 }
 
 

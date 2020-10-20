@@ -8,7 +8,7 @@ Configuration:
     Console:
       name: STDOUT
       PatternLayout:
-        Pattern: "%d{yyyy-MM-dd zzz HH:mm:ss,SSS} [%t] [%X{principal}] %-5level %logger{36} - %formattedMsg%n"
+        Pattern: "%d{yyyy-MM-dd zzz HH:mm:ss,SSS} [%t] [%X{principal}] %-5level %logger{36} - %msg%n"
       BurstFilter:
         level: INFO
         rate: 16
