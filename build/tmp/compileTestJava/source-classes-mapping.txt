@@ -1,4 +1,0 @@
-my/app/MyAppTest.java
- my.app.MyAppTest
-my/app/MdcPopulatingFilterTest.java
- my.app.MdcPopulatingFilterTest
