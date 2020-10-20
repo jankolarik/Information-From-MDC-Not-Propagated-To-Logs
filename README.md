@@ -1,2 +1,2 @@
-# MDC-Logging-Micronaut-Bug-Reproduce
-Repository serves as a bug reproducer to a Micronaut Bug where MDC does not log properly
+# Information from MDC is not propagated to logs
+Repository serves as a bug reproducer for a Micronaut Bug where information from the Mapped Diagnostic Context (MDC) is not propagated to the logs.
