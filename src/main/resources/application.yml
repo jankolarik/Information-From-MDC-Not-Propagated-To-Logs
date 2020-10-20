@@ -1,7 +1,14 @@
 micronaut:
   application:
     name: myApp
+  server:
+    netty:
+      access-logger:
+        enabled: true
+        logger-name: HTTP_ACCESS_LOGGER
+        log-format: "Client: %a Principal: %X{principal} X-Forwarded-For: %{X-Forwarded-For}i %r %s %D ms"
   security:
+    enabled: true
     authentication: bearer
     token:
       jwt:

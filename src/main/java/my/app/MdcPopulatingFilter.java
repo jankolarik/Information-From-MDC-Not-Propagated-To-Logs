@@ -7,6 +7,7 @@ import io.micronaut.http.MutableHttpResponse;
 import io.micronaut.http.annotation.Filter;
 import io.micronaut.http.filter.OncePerRequestHttpServerFilter;
 import io.micronaut.http.filter.ServerFilterChain;
+import io.micronaut.http.filter.ServerFilterPhase;
 import org.reactivestreams.Publisher;
 import org.slf4j.MDC;
 
@@ -17,13 +18,18 @@ import java.security.Principal;
  */
 @Filter("/**")
 @Order(1)
-public class MdcPopulatingFilter extends  OncePerRequestHttpServerFilter{
+public class MdcPopulatingFilter extends OncePerRequestHttpServerFilter{
     private static final String PRINCIPAL = "principal";
 
     @Override
     protected Publisher<MutableHttpResponse<?>> doFilterOnce(HttpRequest<?> request, ServerFilterChain chain) {
         MDC.put(PRINCIPAL, request.getUserPrincipal().map(Principal::getName).orElse("unknown"));
         return Publishers.map(chain.proceed(request), response -> response);
+    }
+
+    @Override
+    public int getOrder() {
+        return ServerFilterPhase.SECURITY.order() + 1;
     }
 }
 
